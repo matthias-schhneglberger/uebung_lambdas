@@ -10,5 +10,5 @@ package Uebung3;
  * @author matth
  */
 public interface NumberTest {
-    
+    boolean testNumber(int Number);
 }
