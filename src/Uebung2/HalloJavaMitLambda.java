@@ -24,6 +24,11 @@ public class HalloJavaMitLambda {
            System.out.println(s + ", ");
        }
        
+       System.out.println("####");
+       
+       list.forEach((String s) -> System.out.println(s));
+       
+       
        
     }
     
