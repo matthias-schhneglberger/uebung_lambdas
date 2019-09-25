@@ -18,40 +18,54 @@ import java.util.logging.Logger;
  * @author matth
  */
 public class NumberTester {
+
+    private NumberTest oddTester = null;
+    private NumberTest primeTest = null;
+    private NumberTest palindromeTest = null;
     
-    public NumberTester(String fileName) throws IOException{
+    public NumberTester(String fileName) throws IOException {
         File file = new File(fileName);
-        
+
         file.createNewFile();
-        
-        
-        
+
         try (FileReader reader = new FileReader(fileName);
-             BufferedReader br = new BufferedReader(reader)) {
+                BufferedReader br = new BufferedReader(reader)) {
 
+            int numOfLines = Integer.valueOf(br.readLine().trim());
 
+            for (int i = 0; i <= numOfLines - 1; i++) {
 
-            
+                System.out.println(br.readLine());
+                String[] line = br.readLine().split(" ");
 
+            }
 
-
-
-
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println(e.toString());
         }
     }
-    
-    public static void main(String[] args) throws IOException{
+
+    public static void main(String[] args) throws IOException {
         NumberTester numTester = new NumberTester("input_uebung3.txt");
     }
-    
-    public void setOddEvenTester(NumberTest oddTester){}
-    
-    public void setPrimeTester(NumberTest primeTreser){}
-    
-    public void setPalindromeTester(NumberTest primeTreser){}
-    
-    public void testFile(){}
-    
+
+    public void setOddEvenTester(NumberTest oddTester) {
+        this.oddTester = oddTester;
+    }
+
+    public void setPrimeTester(NumberTest primeTreser) {
+    }
+
+    public void setPalindromeTester(NumberTest primeTreser) {
+    }
+
+    public void testFile() {
+    }
+
+//    @Override
+//    public boolean testNumber(int Number) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
 }
