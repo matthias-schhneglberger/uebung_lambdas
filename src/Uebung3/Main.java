@@ -6,6 +6,7 @@
 package Uebung3;
 
 import java.io.IOException;
+import java.util.stream.IntStream;
 
 /**
  *
@@ -36,11 +37,12 @@ public class Main {
             return false;
         });
         
-        numTester.setPrimeTester(number -> {
+        numTester.setPrimeTester(number -> { // https://www.baeldung.com/java-prime-numbers
             
+            return number > 2
+            && IntStream.rangeClosed(2, (int) Math.sqrt(number))
+            .noneMatch(n -> (number % n == 0));
             
-            
-            return false;
         });
         
     }

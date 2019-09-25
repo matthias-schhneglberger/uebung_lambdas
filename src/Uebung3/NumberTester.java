@@ -7,11 +7,8 @@ package Uebung3;
 
 import java.io.BufferedReader;
 import java.io.File;
-
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -37,7 +34,19 @@ public class NumberTester {
 
                 System.out.println(br.readLine());
                 String[] line = br.readLine().split(" ");
-
+                
+                if(line[0].equals(1)){
+                    System.out.println(line[1] + "ist gerade: " + oddTester.testNumber(Integer.valueOf(line[1])));
+                }
+                else if(line[0].equals(2)){
+                    System.out.println(line[1] + "ist eine Primzahl: " + primeTester.testNumber(Integer.valueOf(line[1])));
+                }
+                else if(line[0].equals(3)){
+                    System.out.println(line[1] + "ist palindrome: " + palindromeTester.testNumber(Integer.valueOf(line[1])));
+                }
+                
+                
+                oddTester.testNumber(5);
             }
 
         }
@@ -61,12 +70,4 @@ public class NumberTester {
 
     public void testFile() {
     }
-
-    
-    
-//    @Override
-//    public boolean testNumber(int Number) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-
 }
