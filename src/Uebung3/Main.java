@@ -18,24 +18,49 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        NumberTester numTester = new NumberTester("input.txt");
+//        int number1 = 475571;
+//        
+//        String forward = String.valueOf(number1);
+//            
+//        StringBuilder reverser = new StringBuilder(); 
+//        reverser.append(forward);
+//
+//        String reverse = reverser.reverse().toString();
+//        
+//        System.out.println(forward + " " + reverse);
+            
+            
+            
+        NumberTester numTester = new NumberTester("input_uebung3.txt");
+        
+        
         
         numTester.setOddEvenTester(number -> {
             return number % 2 != 0;
         });
+        
+        
+        
         
         numTester.setPalindromeTester(number -> {
             String forward = String.valueOf(number);
             
             StringBuilder reverser = new StringBuilder(); 
             reverser.append(forward);
+            
             String reverse = reverser.reverse().toString();
             
             if(forward.equals(reverse)){
                 return true;
             }
-            return false;
+            else{
+                return false;
+            }
+            
         });
+        
+        
+        
         
         numTester.setPrimeTester(number -> { // https://www.baeldung.com/java-prime-numbers
             
@@ -44,6 +69,12 @@ public class Main {
             .noneMatch(n -> (number % n == 0));
             
         });
+        
+        
+        
+        
+        
+        numTester.testFile();
         
     }
     

@@ -20,40 +20,13 @@ public class NumberTester {
     private NumberTest primeTester = null;
     private NumberTest palindromeTester = null;
     
+    private String fileName = "";
+    
     public NumberTester(String fileName) throws IOException {
-        File file = new File(fileName);
-
-        file.createNewFile();
-
-        try (FileReader reader = new FileReader(fileName);
-                BufferedReader br = new BufferedReader(reader)) {
-
-            int numOfLines = Integer.valueOf(br.readLine().trim());
-
-            for (int i = 0; i <= numOfLines - 1; i++) {
-
-                System.out.println(br.readLine());
-                String[] line = br.readLine().split(" ");
-                
-                if(line[0].equals(1)){
-                    System.out.println(line[1] + "ist gerade: " + oddTester.testNumber(Integer.valueOf(line[1])));
-                }
-                else if(line[0].equals(2)){
-                    System.out.println(line[1] + "ist eine Primzahl: " + primeTester.testNumber(Integer.valueOf(line[1])));
-                }
-                else if(line[0].equals(3)){
-                    System.out.println(line[1] + "ist palindrome: " + palindromeTester.testNumber(Integer.valueOf(line[1])));
-                }
-                
-                
-                oddTester.testNumber(5);
-            }
-
-        }
-        catch (IOException e) {
-            System.out.println(e.toString());
-        }
+        this.fileName = fileName;
     }
+    
+    
 
 
     public void setOddEvenTester(NumberTest oddTester) {
@@ -64,10 +37,61 @@ public class NumberTester {
         this.primeTester = primeTester;
     }
 
-    public void setPalindromeTester(NumberTest primeTreser) {
-        this.primeTester = primeTreser;
+    public void setPalindromeTester(NumberTest palindromeTester) {
+        this.palindromeTester = palindromeTester;
     }
 
-    public void testFile() {
+    public void testFile() throws IOException {
+        File file = new File(fileName);
+
+        file.createNewFile();
+
+        try (FileReader reader = new FileReader(fileName);
+                BufferedReader br = new BufferedReader(reader)) {
+
+            int numOfLines = Integer.valueOf(br.readLine().trim());
+
+            for (int i = 0; i <= numOfLines - 1; i++) {
+                
+                String[] line = br.readLine().split(" ");
+                
+                
+                int method = Integer.valueOf(line[0]);
+                
+                if(method == 1){
+                    if(oddTester.testNumber(Integer.valueOf(line[1]))){
+                        System.out.println(line[1] + ": EVEN");
+                    }
+                    else{
+                        System.out.println(line[1] + ": ODD");
+                    }
+                    //System.out.println(line[1] + " ist ungerade: " + oddTester.testNumber(Integer.valueOf(line[1])));
+                }
+                if(method == 2){
+                    if(primeTester.testNumber(Integer.valueOf(line[1]))){
+                        System.out.println(line[1] + ": PRIME");
+                    }
+                    else{
+                        System.out.println(line[1] + ": NO PRIME");
+                    }
+                    //System.out.println(line[1] + " ist eine Primzahl: " + primeTester.testNumber(Integer.valueOf(line[1])));
+                }
+                if(method == 3){
+                    if(palindromeTester.testNumber(Integer.valueOf(line[1]))){
+                        System.out.println(line[1] + ": PALINDROME");
+                    }
+                    else{
+                        System.out.println(line[1] + ": NO PALINDROME");
+                    }
+                    //System.out.println(line[1] + " ist Palindrom: " + palindromeTester.testNumber(Integer.valueOf(line[1])));
+                }
+                
+                
+            }
+
+        }
+        catch (IOException e) {
+            System.out.println(e.toString());
+        }
     }
 }
