@@ -20,8 +20,8 @@ import java.util.logging.Logger;
 public class NumberTester {
 
     private NumberTest oddTester = null;
-    private NumberTest primeTest = null;
-    private NumberTest palindromeTest = null;
+    private NumberTest primeTester = null;
+    private NumberTest palindromeTester = null;
     
     public NumberTester(String fileName) throws IOException {
         File file = new File(fileName);
@@ -46,23 +46,24 @@ public class NumberTester {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        NumberTester numTester = new NumberTester("input_uebung3.txt");
-    }
 
     public void setOddEvenTester(NumberTest oddTester) {
         this.oddTester = oddTester;
     }
 
-    public void setPrimeTester(NumberTest primeTreser) {
+    public void setPrimeTester(NumberTest primeTester) {
+        this.primeTester = primeTester;
     }
 
     public void setPalindromeTester(NumberTest primeTreser) {
+        this.primeTester = primeTreser;
     }
 
     public void testFile() {
     }
 
+    
+    
 //    @Override
 //    public boolean testNumber(int Number) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
