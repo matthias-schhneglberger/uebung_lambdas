@@ -17,30 +17,39 @@ interface RelationalCalculate {
 public class RationalCalculator extends AbstractCalculator{
     
     
-    CalculationOperation add = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() + a.getB());
-    num.setB(b.getA() + b.getB());
-    return num;};
+//    CalculationOperation add = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() + a.getB());
+//    num.setB(b.getA() + b.getB());
+//    return num;};
+//    
+//    CalculationOperation subtract = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() - a.getB());
+//    num.setB(b.getA() - b.getB());
+//    return num;};
+//
+//    CalculationOperation multiply = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() * a.getB());
+//    num.setB(b.getA() * b.getB());
+//    return num;};
+//    
+//    CalculationOperation divide = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() / a.getB());
+//    num.setB(b.getA() / b.getB());
+//    return num;};
     
-    CalculationOperation subtract = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() - a.getB());
-    num.setB(b.getA() - b.getB());
-    return num;};
-
-    CalculationOperation multiply = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() * a.getB());
-    num.setB(b.getA() * b.getB());
-    return num;};
-    
-    CalculationOperation divide = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() / a.getB());
-    num.setB(b.getA() / b.getB());
-    return num;};
-    
+    CalculationOperation add = null;
+    CalculationOperation subtract = null;
+    CalculationOperation multiply = null;
+    CalculationOperation divide = null;
     
     
     public RationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
+        
+        this.add = add;
+        this.subtract = subtract;
+        this.multiply = multiply;
+        this.divide = divide;
     }
 
     @Override

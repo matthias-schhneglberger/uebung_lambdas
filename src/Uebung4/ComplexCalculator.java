@@ -11,30 +11,40 @@ package Uebung4;
  */
 public class ComplexCalculator extends AbstractCalculator{
     
-    CalculationOperation add = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() + b.getA());
-    num.setB(a.getB() + b.getB());
-    return num;};
+//    CalculationOperation add = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() + b.getA());
+//    num.setB(a.getB() + b.getB());
+//    return num;};
+//    
+//    CalculationOperation subtract = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() - b.getA());
+//    num.setB(a.getB() - b.getB());
+//    return num;};
+//
+//    CalculationOperation multiply = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() * b.getA());
+//    num.setB(a.getB() * b.getB());
+//    return num;};
+//    
+//    CalculationOperation divide = (a, b) -> {Number num = new Number();
+//    num.setA(a.getA() / b.getA());
+//    num.setB(a.getB() / b.getB());
+//    return num;};
     
-    CalculationOperation subtract = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() - b.getA());
-    num.setB(a.getB() - b.getB());
-    return num;};
-
-    CalculationOperation multiply = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() * b.getA());
-    num.setB(a.getB() * b.getB());
-    return num;};
-    
-    CalculationOperation divide = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() / b.getA());
-    num.setB(a.getB() / b.getB());
-    return num;};
+    CalculationOperation add = null;
+    CalculationOperation subtract = null;
+    CalculationOperation multiply = null;
+    CalculationOperation divide = null;
     
     
 
     public ComplexCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
+        
+        this.add = add;
+        this.subtract = subtract;
+        this.multiply = multiply;
+        this.divide = divide;
     }
 
     @Override
