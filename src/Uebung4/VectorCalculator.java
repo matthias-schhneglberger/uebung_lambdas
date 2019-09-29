@@ -9,12 +9,11 @@ package Uebung4;
  *
  * @author matth
  */
-interface RelationalCalculate {
-    Number calculate(Number a, Number b);
-}
 
 
-public class RationalCalculator extends AbstractCalculator{
+
+public class VectorCalculator extends AbstractCalculator{
+    
     CalculationOperation add = (a, b) -> {Number num = new Number();
     num.setA(a.getA() + b.getA());
     num.setB(a.getB() + b.getB());
@@ -36,8 +35,8 @@ public class RationalCalculator extends AbstractCalculator{
     return num;};
     
     
-    
-    public RationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
+
+    public VectorCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
     }
 
