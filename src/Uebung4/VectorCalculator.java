@@ -15,23 +15,23 @@ package Uebung4;
 public class VectorCalculator extends AbstractCalculator{
     
     CalculationOperation add = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() + b.getA());
-    num.setB(a.getB() + b.getB());
+    num.setA(a.getA() + a.getB());
+    num.setB(b.getA() + b.getB());
     return num;};
     
     CalculationOperation subtract = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() - b.getA());
-    num.setB(a.getB() - b.getB());
+    num.setA(a.getA() - a.getB());
+    num.setB(b.getA() - b.getB());
     return num;};
 
     CalculationOperation multiply = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() * b.getA());
-    num.setB(a.getB() * b.getB());
+    num.setA(a.getA() * a.getB());
+    num.setB(b.getA() * b.getB());
     return num;};
     
     CalculationOperation divide = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() / b.getA());
-    num.setB(a.getB() / b.getB());
+    num.setA(a.getA() / a.getB());
+    num.setB(b.getA() / b.getB());
     return num;};
     
     

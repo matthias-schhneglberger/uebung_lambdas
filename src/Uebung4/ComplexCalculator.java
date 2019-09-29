@@ -9,37 +9,31 @@ package Uebung4;
  *
  * @author matth
  */
-interface RelationalCalculate {
-    Number calculate(Number a, Number b);
-}
-
-
-public class RationalCalculator extends AbstractCalculator{
-    
+public class ComplexCalculator extends AbstractCalculator{
     
     CalculationOperation add = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() + a.getB());
-    num.setB(b.getA() + b.getB());
+    num.setA(a.getA() + b.getA());
+    num.setB(a.getB() + b.getB());
     return num;};
     
     CalculationOperation subtract = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() - a.getB());
-    num.setB(b.getA() - b.getB());
+    num.setA(a.getA() - b.getA());
+    num.setB(a.getB() - b.getB());
     return num;};
 
     CalculationOperation multiply = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() * a.getB());
-    num.setB(b.getA() * b.getB());
+    num.setA(a.getA() * b.getA());
+    num.setB(a.getB() * b.getB());
     return num;};
     
     CalculationOperation divide = (a, b) -> {Number num = new Number();
-    num.setA(a.getA() / a.getB());
-    num.setB(b.getA() / b.getB());
+    num.setA(a.getA() / b.getA());
+    num.setB(a.getB() / b.getB());
     return num;};
     
     
-    
-    public RationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
+
+    public ComplexCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
     }
 
@@ -62,5 +56,4 @@ public class RationalCalculator extends AbstractCalculator{
     public Number divide(Number a, Number b) {
         return divide.calc(a, b);
     }
-    
 }
