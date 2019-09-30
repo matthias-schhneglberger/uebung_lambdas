@@ -34,10 +34,10 @@ public class VectorCalculator extends AbstractCalculator{
 //    num.setB(b.getA() / b.getB());
 //    return num;};
     
-    CalculationOperation add = null;
-    CalculationOperation subtract = null;
-    CalculationOperation multiply = null;
-    CalculationOperation divide = null;
+    private CalculationOperation add = null;
+    private CalculationOperation subtract = null;
+    private CalculationOperation multiply = null;
+    private CalculationOperation divide = null;
     
     
 
