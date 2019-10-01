@@ -161,24 +161,27 @@ public class Main {
     
     private static void setupRationalCalc(){
         CalculationOperation add = (a, b) -> {Number num = new Number();
-        num.setA(a.getA() + a.getB());
-        num.setB(b.getA() + b.getB());
+        num.setA((a.getA() + b.getB()) * (b.getA() * a.getB())); //https://www.programmieraufgaben.ch/aufgabe/brueche-addieren/gza2hx9f
+        num.setB(a.getB() * b.getB());
         return num;};
 
         CalculationOperation subtract = (a, b) -> {Number num = new Number();
-        num.setA(a.getA() - a.getB());
-        num.setB(b.getA() - b.getB());
+        num.setA((a.getA()*b.getB()) - (b.getA()*a.getB()));
+        num.setB(a.getB() * b.getB());
         return num;};
 
         CalculationOperation multiply = (a, b) -> {Number num = new Number();
-        num.setA(a.getA() * a.getB());
-        num.setB(b.getA() * b.getB());
+        num.setA(a.getA() * b.getA());
+        num.setB(a.getB() * b.getB());
         return num;};
 
         CalculationOperation divide = (a, b) -> {Number num = new Number();
-        num.setA(a.getA() / a.getB());
-        num.setB(b.getA() / b.getB());
-        return num;};
+        Number kehrwert = new Number();
+        kehrwert.setA(b.getB());
+        kehrwert.setB(b.getA());
+        
+        return multiply.calc(a, kehrwert);
+        };
         
         rationalCalc = new RationalCalculator(add, subtract, multiply, divide);
     }
