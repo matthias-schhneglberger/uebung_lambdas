@@ -146,9 +146,14 @@ public class Main {
                 break;
         }
         
+        try{
+            System.out.println(rueckgabe.getA());
+            System.out.println(rueckgabe.getB());
+        }
+        catch(Exception e){
+            System.out.println("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut");
+        }
         
-        System.out.println(rueckgabe.getA());
-        System.out.println(rueckgabe.getB());
     }
     
     
@@ -161,7 +166,7 @@ public class Main {
     
     private static void setupRationalCalc(){
         CalculationOperation add = (a, b) -> {Number num = new Number();
-        num.setA((a.getA() + b.getB()) * (b.getA() * a.getB())); //https://www.programmieraufgaben.ch/aufgabe/brueche-addieren/gza2hx9f
+        num.setA((a.getA() * b.getB()) + (b.getA() * a.getB())); //https://www.programmieraufgaben.ch/aufgabe/brueche-addieren/gza2hx9f
         num.setB(a.getB() * b.getB());
         return num;};
 

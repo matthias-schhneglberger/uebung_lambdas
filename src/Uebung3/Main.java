@@ -6,6 +6,7 @@
 package Uebung3;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.stream.IntStream;
 
 /**
@@ -62,11 +63,14 @@ public class Main {
         
         
         
-        numTester.setPrimeTester(number -> { // https://www.baeldung.com/java-prime-numbers
+        numTester.setPrimeTester(number -> {
             
-            return number > 2
-            && IntStream.rangeClosed(2, (int) Math.sqrt(number))
-            .noneMatch(n -> (number % n == 0));
+            BigInteger bValue = BigInteger.valueOf(number);
+            
+            boolean result = bValue.isProbablePrime(1);
+
+            return result;
+
             
         });
         
